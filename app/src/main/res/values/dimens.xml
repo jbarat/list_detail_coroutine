@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="size_small">8dp</dimen>
+    <dimen name="size_standard">16dp</dimen>
+
+    <dimen name="avatar_width">120dp</dimen>
+    <dimen name="avatar_height">120dp</dimen>
+    <dimen name="app_height">200dp</dimen>
+</resources>

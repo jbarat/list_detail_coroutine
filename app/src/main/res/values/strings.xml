@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CoroutineListAndDetail</string>
+    <string name="post_detail_comments_label">Comments:</string>
+    <string name="post_detail_avatar_content_description">Avatar Image</string>
+    <string name="post_list_item_avatar_content_description">Avatar Image</string>
+    <string name="post_list_title">Posts</string>
+</resources>

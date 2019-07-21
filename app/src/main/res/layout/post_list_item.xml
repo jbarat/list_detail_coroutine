@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:elevation="@dimen/size_small"
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_marginLeft="@dimen/size_small"
+        android:layout_marginTop="@dimen/size_small"
+        android:layout_marginRight="@dimen/size_small"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+                tools:text="Post title"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/size_small"
+                app:layout_constraintStart_toEndOf="@+id/avatar"
+                android:layout_marginStart="16dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginTop="@dimen/size_small"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+        <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                tools:srcCompat="@tools:sample/avatars"
+                android:id="@+id/avatar"
+                android:layout_marginBottom="@dimen/size_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/size_small"
+                app:layout_constraintDimensionRatio="h,1:1"
+                android:layout_marginTop="@dimen/size_small"
+                android:contentDescription="@string/post_list_item_avatar_content_description"/>
+
+        <TextView
+                tools:text="by Author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/author"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/size_small"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintHorizontal_bias="0.0"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

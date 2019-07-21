@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion compileSdk
+    defaultConfig {
+        applicationId "co.uk.jbarat.coroutinelistanddetail"
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':data')
+    implementation project(':domain')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "androidx.core:core-ktx:$core"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+    implementation "org.koin:koin-android:$koin"
+    implementation "org.koin:koin-androidx-viewmodel:$koin"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelExt"
+    implementation "com.google.android.material:material:$material"
+
+
+    implementation "com.github.bumptech.glide:glide:$glide"
+    kapt "com.github.bumptech.glide:compiler:$glide"
+
+    testImplementation "junit:junit:$junit"
+}
