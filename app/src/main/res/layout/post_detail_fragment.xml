@@ -1,133 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
         <ImageView
-                android:layout_width="@dimen/avatar_width"
-                android:layout_height="@dimen/avatar_height"
-                tools:src="@tools:sample/avatars"
-                app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/avatar"
-                android:layout_marginTop="@dimen/size_small"
-                android:layout_marginStart="@dimen/size_small"
-                android:contentDescription="@string/post_detail_avatar_content_description"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/avatar_width"
+            android:layout_height="@dimen/avatar_height"
+            android:layout_marginStart="@dimen/size_small"
+            android:layout_marginTop="@dimen/size_small"
+            android:contentDescription="@string/post_detail_avatar_content_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
-                tools:text="Best Title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/title"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                app:layout_constraintStart_toEndOf="@+id/avatar"
-                android:layout_marginStart="@dimen/size_small"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="@dimen/size_small"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                android:layout_marginTop="@dimen/size_small"/>
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_small"
+            android:layout_marginTop="@dimen/size_small"
+            android:layout_marginEnd="@dimen/size_small"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/avatar"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:text="Best Title" />
 
         <TextView
-                tools:text="by John Doe"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/author"
-                app:layout_constraintStart_toStartOf="@+id/title"
-                android:layout_marginTop="@dimen/size_small"
-                app:layout_constraintTop_toBottomOf="@+id/title"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="@dimen/size_small"
-                app:layout_constraintHorizontal_bias="0.0"/>
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_small"
+            android:layout_marginEnd="@dimen/size_small"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:text="by John Doe" />
 
         <TextView
-                tools:text="@tools:sample/lorem/random"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/body"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="@dimen/size_small"
-                android:layout_marginTop="@dimen/size_small"
-                app:layout_constraintTop_toBottomOf="@+id/avatar"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="@dimen/size_small"/>
+            android:id="@+id/body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_small"
+            android:layout_marginTop="@dimen/size_small"
+            android:layout_marginEnd="@dimen/size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/avatar"
+            tools:text="@tools:sample/lorem/random" />
 
         <TextView
-                tools:text="32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/commentCount"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="@dimen/size_small"
-                android:layout_marginTop="@dimen/size_small"
-                app:layout_constraintTop_toBottomOf="@+id/body"/>
+            android:id="@+id/commentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_small"
+            android:layout_marginEnd="@dimen/size_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/body"
+            tools:text="32" />
 
         <TextView
-                android:text="@string/post_detail_comments_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/commentCountLabel"
-                android:layout_marginTop="@dimen/size_small"
-                app:layout_constraintTop_toBottomOf="@+id/body"
-                app:layout_constraintEnd_toStartOf="@+id/commentCount"
-                android:layout_marginEnd="@dimen/size_small"/>
+            android:id="@+id/commentCountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_small"
+            android:layout_marginEnd="@dimen/size_small"
+            android:text="@string/post_detail_comments_label"
+            app:layout_constraintEnd_toStartOf="@+id/commentCount"
+            app:layout_constraintTop_toBottomOf="@+id/body" />
 
         <androidx.appcompat.widget.Toolbar
-                android:layout_width="0dp"
-                app:navigationIcon="@drawable/ic_arrow_back"
-                android:elevation="@dimen/size_small"
-                android:layout_height="wrap_content"
-                android:background="?attr/colorPrimary"
-                android:theme="?attr/actionBarTheme"
-                android:minHeight="?attr/actionBarSize"
-                android:id="@+id/toolbar"
-                app:title="Details"
-                style="@style/Toolbar"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/size_small"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="Details" />
 
         <androidx.core.widget.ContentLoadingProgressBar
-                android:id="@+id/loading"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+            android:id="@+id/loading"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-                android:id="@+id/error"
-                tools:text="Error"
-                android:visibility="invisible"
-                tools:visibility="visible"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/size_standard"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                android:layout_marginBottom="@dimen/size_standard"
-                android:layout_marginStart="@dimen/size_standard"
-                android:layout_marginEnd="@dimen/size_standard"/>
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_standard"
+            android:layout_marginTop="@dimen/size_standard"
+            android:layout_marginEnd="@dimen/size_standard"
+            android:layout_marginBottom="@dimen/size_standard"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            tools:text="Error"
+            tools:visibility="visible" />
 
         <androidx.constraintlayout.widget.Group
-                app:constraint_referenced_ids="commentCountLabel,commentCount,body,author,title,avatar"
-                android:visibility="invisible"
-                tools:visibility="visible"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/content"/>
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="commentCountLabel,commentCount,body,author,title,avatar"
+            tools:visibility="visible" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

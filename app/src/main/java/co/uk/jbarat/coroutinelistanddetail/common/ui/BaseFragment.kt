@@ -20,7 +20,7 @@ abstract class BaseFragment : Fragment() {
         when (it) {
             NavigationCommand.Back -> findNavController().popBackStack()
             is NavigationCommand.PostDetails -> findNavController()
-                .navigate(PostListFragmentDirections.actionPostListFragmentToPostDetailFragment(it.postId))
+                    .navigate(PostListFragmentDirections.actionPostListFragmentToPostDetailFragment(it.postId))
         }
     }
 }

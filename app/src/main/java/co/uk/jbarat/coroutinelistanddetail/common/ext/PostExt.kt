@@ -10,9 +10,9 @@ import co.uk.jbarat.coroutinelistanddetail.feature.postlist.SimplePost
 fun SimplePostEntity.toPresentation() = SimplePost(id = id, author = author.name, title = title)
 
 fun DetailedPostEntity.toPresentation() = DetailedPost(
-    title = title,
-    authorName = author.name,
-    body = body,
-    commentCount = commentEntities.size
+        title = title,
+        authorName = author.name,
+        body = body,
+        commentCount = commentEntities.size
 )
 

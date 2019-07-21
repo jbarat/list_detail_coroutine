@@ -29,16 +29,16 @@ class GetPostUseCaseTest {
 
         //Verify
         assertEquals(
-            result,
-            GetPostResult.GetPostSuccess(
-                DetailedPostEntity(
-                    id = postId,
-                    title = testPostEntity.title,
-                    body = testPostEntity.body,
-                    commentEntities = testComments,
-                    author = testAuthorEntity
+                result,
+                GetPostResult.GetPostSuccess(
+                        DetailedPostEntity(
+                                id = postId,
+                                title = testPostEntity.title,
+                                body = testPostEntity.body,
+                                commentEntities = testComments,
+                                author = testAuthorEntity
+                        )
                 )
-            )
         )
     }
 
@@ -55,10 +55,10 @@ class GetPostUseCaseTest {
 
         //Verify
         assertEquals(
-            result,
-            GetPostResult.GetPostError(
-                exception = testException
-            )
+                result,
+                GetPostResult.GetPostError(
+                        exception = testException
+                )
         )
     }
 
@@ -75,10 +75,10 @@ class GetPostUseCaseTest {
 
         //Verify
         assertEquals(
-            result,
-            GetPostResult.GetPostError(
-                exception = testException
-            )
+                result,
+                GetPostResult.GetPostError(
+                        exception = testException
+                )
         )
     }
 
@@ -95,10 +95,10 @@ class GetPostUseCaseTest {
 
         //Verify
         assertEquals(
-            result,
-            GetPostResult.GetPostError(
-                exception = testException
-            )
+                result,
+                GetPostResult.GetPostError(
+                        exception = testException
+                )
         )
     }
 
@@ -132,19 +132,19 @@ class GetPostUseCaseTest {
     private val testException = TestException("test")
 
     private val testPostEntity = PostEntity(
-        id = postId,
-        body = "body",
-        title = "title",
-        authorId = authorId
+            id = postId,
+            body = "body",
+            title = "title",
+            authorId = authorId
     )
 
     private val testAuthorEntity = AuthorEntity(
-        id = authorId,
-        name = "Johny"
+            id = authorId,
+            name = "Johny"
     )
 
     private val testComments = listOf(
-        CommentEntity(3), CommentEntity(4)
+            CommentEntity(3), CommentEntity(4)
     )
 }
 

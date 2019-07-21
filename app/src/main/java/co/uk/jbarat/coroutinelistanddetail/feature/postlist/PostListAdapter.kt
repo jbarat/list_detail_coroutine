@@ -13,15 +13,15 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import kotlinx.android.synthetic.main.post_list_item.view.*
 
 class PostListAdapter(
-    private val clickCallback: (selectedPost: SimplePost) -> Unit
+        private val clickCallback: (selectedPost: SimplePost) -> Unit
 ) : RecyclerView.Adapter<PostListAdapter.PostListViewHolder>() {
 
     private var posts = emptyList<SimplePost>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        LayoutInflater.from(parent.context).run {
-            PostListViewHolder(inflate(R.layout.post_list_item, parent, false), clickCallback::invoke)
-        }
+            LayoutInflater.from(parent.context).run {
+                PostListViewHolder(inflate(R.layout.post_list_item, parent, false), clickCallback::invoke)
+            }
 
     override fun getItemCount() = posts.size
 
@@ -34,8 +34,8 @@ class PostListAdapter(
     }
 
     inner class PostListViewHolder(
-        itemView: View,
-        clickCallback: (selectedPost: SimplePost) -> Unit
+            itemView: View,
+            clickCallback: (selectedPost: SimplePost) -> Unit
     ) : RecyclerView.ViewHolder(itemView) {
 
         private var post: SimplePost? = null
@@ -54,10 +54,10 @@ class PostListAdapter(
                 author.text = post.author
 
                 Glide.with(context).load(avatarServiceUrl + post.author)
-                    .centerCrop()
-                    .placeholder(R.drawable.ic_person)
-                    .transform(RoundedCorners(resources.getDimensionInPixel(R.dimen.avatar_corner)))
-                    .into(avatar)
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_person)
+                        .transform(RoundedCorners(resources.getDimensionInPixel(R.dimen.avatar_corner)))
+                        .into(avatar)
             }
         }
     }

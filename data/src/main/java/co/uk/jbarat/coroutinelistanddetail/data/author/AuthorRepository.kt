@@ -6,7 +6,7 @@ import co.uk.jbarat.coroutinelistanddetail.domain.gateway.author.AuthorEntity
 import co.uk.jbarat.coroutinelistanddetail.domain.gateway.author.AuthorGateway
 
 class AuthorRepository(
-    private val jsonPlaceHolderService: JsonPlaceHolderService
+        private val jsonPlaceHolderService: JsonPlaceHolderService
 ) : AuthorGateway {
     override suspend fun getAuthor(id: Int): AuthorEntity {
         val result = jsonPlaceHolderService.getUsers(id)
@@ -14,8 +14,8 @@ class AuthorRepository(
         if (result.isSuccessful) {
             result.body()?.let { author ->
                 return AuthorEntity(
-                    id = author.id,
-                    name = author.name
+                        id = author.id,
+                        name = author.name
                 )
 
             } ?: throw NetworkException("No body")

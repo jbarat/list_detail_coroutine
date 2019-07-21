@@ -13,7 +13,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 
 class PostListViewModel(
-    private val postListUseCase: GetPostListUseCase
+        private val postListUseCase: GetPostListUseCase
 ) : BaseViewModel() {
 
     private val _state = MutableLiveData<PostListState>()
@@ -50,9 +50,9 @@ class PostListViewModel(
     private fun handleStateUpdate(result: GetPostListResult): PostListState {
         return when (result) {
             is GetPostListResult.GetPostListSuccess -> PostListState(
-                postEntities = result.simplePostEntities.map { it.toPresentation() })
+                    postEntities = result.simplePostEntities.map { it.toPresentation() })
             is GetPostListResult.GetPostListError -> PostListState(
-                error = result.exception.toPresentation()
+                    error = result.exception.toPresentation()
             )
         }
     }
@@ -66,7 +66,7 @@ sealed class PostListViewUserAction {
 
 /** State for the view */
 data class PostListState(
-    val loading: Boolean = false,
-    val postEntities: List<SimplePost>? = null,
-    val error: String? = null
+        val loading: Boolean = false,
+        val postEntities: List<SimplePost>? = null,
+        val error: String? = null
 )

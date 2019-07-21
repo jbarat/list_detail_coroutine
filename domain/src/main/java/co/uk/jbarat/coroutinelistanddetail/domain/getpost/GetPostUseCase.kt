@@ -7,12 +7,13 @@ import co.uk.jbarat.coroutinelistanddetail.domain.gateway.comment.CommentEntity
 import co.uk.jbarat.coroutinelistanddetail.domain.gateway.comment.CommentGateway
 import co.uk.jbarat.coroutinelistanddetail.domain.gateway.post.PostEntity
 import co.uk.jbarat.coroutinelistanddetail.domain.gateway.post.PostGateway
-import kotlinx.coroutines.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 
 class GetPostUseCase(
-    private val postGateway: PostGateway,
-    private val authorGateway: AuthorGateway,
-    private val commentGateway: CommentGateway
+        private val postGateway: PostGateway,
+        private val authorGateway: AuthorGateway,
+        private val commentGateway: CommentGateway
 ) : UseCase<GetPostParams, GetPostResult> {
 
     override suspend fun invoke(params: GetPostParams): GetPostResult {
@@ -30,18 +31,18 @@ class GetPostUseCase(
     }
 
     private fun getPostSuccess(
-        post: PostEntity,
-        comments: List<CommentEntity>,
-        author: AuthorEntity
+            post: PostEntity,
+            comments: List<CommentEntity>,
+            author: AuthorEntity
     ): GetPostResult.GetPostSuccess {
         return GetPostResult.GetPostSuccess(
-            DetailedPostEntity(
-                id =  post.id,
-                body = post.body,
-                title = post.title,
-                author = author,
-                commentEntities = comments
-            )
+                DetailedPostEntity(
+                        id = post.id,
+                        body = post.body,
+                        title = post.title,
+                        author = author,
+                        commentEntities = comments
+                )
         )
     }
 }

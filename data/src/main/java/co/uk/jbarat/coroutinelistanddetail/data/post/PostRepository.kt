@@ -6,7 +6,7 @@ import co.uk.jbarat.coroutinelistanddetail.domain.gateway.post.PostEntity
 import co.uk.jbarat.coroutinelistanddetail.domain.gateway.post.PostGateway
 
 class PostRepository(
-    private val jsonPlaceHolderService: JsonPlaceHolderService
+        private val jsonPlaceHolderService: JsonPlaceHolderService
 ) : PostGateway {
 
     override suspend fun getAllPost(): List<PostEntity> {
@@ -16,15 +16,15 @@ class PostRepository(
             result.body()?.let { posts ->
                 return posts.map {
                     PostEntity(
-                        id = it.id,
-                        authorId = it.userId,
-                        title = it.title,
-                        body = it.body
+                            id = it.id,
+                            authorId = it.userId,
+                            title = it.title,
+                            body = it.body
                     )
                 }
             } ?: throw NetworkException("No body")
         } else {
-           throw NetworkException("Network Error")
+            throw NetworkException("Network Error")
         }
     }
 
@@ -34,10 +34,10 @@ class PostRepository(
         if (result.isSuccessful) {
             result.body()?.let { post ->
                 return PostEntity(
-                    id = post.id,
-                    authorId = post.userId,
-                    title = post.title,
-                    body = post.body
+                        id = post.id,
+                        authorId = post.userId,
+                        title = post.title,
+                        body = post.body
                 )
             } ?: throw NetworkException("No body")
         } else {

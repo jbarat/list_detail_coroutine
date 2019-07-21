@@ -26,23 +26,23 @@ class GetPostListUseCaseTest {
 
         //Verify
         assertEquals(
-            result,
-            GetPostListResult.GetPostListSuccess(
-                listOf(
-                    SimplePostEntity(
-                        id = testPostsEntity[0].id,
-                        body = testPostsEntity[0].body,
-                        title = testPostsEntity[0].title,
-                        author = testAuthor1Entity
-                    ),
-                    SimplePostEntity(
-                        id = testPostsEntity[1].id,
-                        body = testPostsEntity[1].body,
-                        title = testPostsEntity[1].title,
-                        author = testAuthor2Entity
-                    )
+                result,
+                GetPostListResult.GetPostListSuccess(
+                        listOf(
+                                SimplePostEntity(
+                                        id = testPostsEntity[0].id,
+                                        body = testPostsEntity[0].body,
+                                        title = testPostsEntity[0].title,
+                                        author = testAuthor1Entity
+                                ),
+                                SimplePostEntity(
+                                        id = testPostsEntity[1].id,
+                                        body = testPostsEntity[1].body,
+                                        title = testPostsEntity[1].title,
+                                        author = testAuthor2Entity
+                                )
+                        )
                 )
-            )
         )
     }
 
@@ -58,10 +58,10 @@ class GetPostListUseCaseTest {
 
         //Verify
         assertEquals(
-            result,
-            GetPostListResult.GetPostListError(
-                testException
-            )
+                result,
+                GetPostListResult.GetPostListError(
+                        testException
+                )
         )
     }
 
@@ -77,10 +77,10 @@ class GetPostListUseCaseTest {
 
         //Verify
         assertEquals(
-            result,
-            GetPostListResult.GetPostListError(
-                testException
-            )
+                result,
+                GetPostListResult.GetPostListError(
+                        testException
+                )
         )
     }
 
@@ -107,27 +107,27 @@ class GetPostListUseCaseTest {
     private val testException = TestException("test")
 
     private val testPostsEntity = listOf(
-        PostEntity(
-            id = 334,
-            body = "body",
-            title = "title",
-            authorId = authorId1
-        ),
-        PostEntity(
-            id = 3345,
-            body = "body2",
-            title = "title2",
-            authorId = authorId2
-        )
+            PostEntity(
+                    id = 334,
+                    body = "body",
+                    title = "title",
+                    authorId = authorId1
+            ),
+            PostEntity(
+                    id = 3345,
+                    body = "body2",
+                    title = "title2",
+                    authorId = authorId2
+            )
     )
 
     private val testAuthor1Entity = AuthorEntity(
-        id = authorId1,
-        name = "Johny"
+            id = authorId1,
+            name = "Johny"
     )
 
     private val testAuthor2Entity = AuthorEntity(
-        id = authorId2,
-        name = "Johny Dee"
+            id = authorId2,
+            name = "Johny Dee"
     )
 }

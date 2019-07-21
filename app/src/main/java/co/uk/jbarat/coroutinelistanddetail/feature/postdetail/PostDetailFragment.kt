@@ -1,6 +1,5 @@
 package co.uk.jbarat.coroutinelistanddetail.feature.postdetail
 
-import android.content.res.Resources
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,8 +24,8 @@ class PostDetailFragment : BaseFragment() {
     override val viewModel: PostDetailViewModel by viewModel { parametersOf(args) }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View = inflater.inflate(R.layout.post_detail_fragment, container, false).apply {
         toolbar.setNavigationOnClickListener { viewModel.userAction(PostDetailViewUserAction.Back) }
 
@@ -44,10 +43,10 @@ class PostDetailFragment : BaseFragment() {
                 commentCount.text = post.commentCount.toString()
 
                 Glide.with(context).load(avatarServiceUrl + post.authorName)
-                    .centerCrop()
-                    .placeholder(R.drawable.ic_person)
-                    .transform(RoundedCorners(resources.getDimensionInPixel(R.dimen.avatar_corner)))
-                    .into(avatar)
+                        .centerCrop()
+                        .placeholder(R.drawable.ic_person)
+                        .transform(RoundedCorners(resources.getDimensionInPixel(R.dimen.avatar_corner)))
+                        .into(avatar)
             }
         })
     }

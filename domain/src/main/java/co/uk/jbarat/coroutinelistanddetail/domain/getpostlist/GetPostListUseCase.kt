@@ -7,15 +7,15 @@ import co.uk.jbarat.coroutinelistanddetail.domain.gateway.post.PostEntity
 import co.uk.jbarat.coroutinelistanddetail.domain.gateway.post.PostGateway
 
 class GetPostListUseCase(
-    private val postGateway: PostGateway,
-    private val authorGateway: AuthorGateway
+        private val postGateway: PostGateway,
+        private val authorGateway: AuthorGateway
 ) : NoParamUseCase<GetPostListResult> {
 
     override suspend fun invoke(): GetPostListResult {
         return try {
             GetPostListResult.GetPostListSuccess(
-                postGateway.getAllPost()
-                    .map { it.mapToDetailedPostEntity(authorGateway.getAuthor(it.authorId)) }
+                    postGateway.getAllPost()
+                            .map { it.mapToDetailedPostEntity(authorGateway.getAuthor(it.authorId)) }
             )
         } catch (e: Exception) {
             GetPostListResult.GetPostListError(e)
@@ -25,10 +25,10 @@ class GetPostListUseCase(
 
 private fun PostEntity.mapToDetailedPostEntity(authorEntity: AuthorEntity): SimplePostEntity {
     return SimplePostEntity(
-        id = id,
-        title = title,
-        body = body,
-        author = authorEntity
+            id = id,
+            title = title,
+            body = body,
+            author = authorEntity
     )
 }
 

@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if(!findNavController(R.id.navigationHost).popBackStack()){
+        if (!findNavController(R.id.navigationHost).popBackStack()) {
             super.onBackPressed()
         }
     }
