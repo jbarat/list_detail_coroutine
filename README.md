@@ -69,10 +69,10 @@ challenging to use it with suspended functions. To save time, I decided
 to use simple jUnit testing instead.
 
 I wrote tests for the domain layer. If I would have more time I would
-have written unit tests to every ViewModel and Repository.
+have written unit tests for every ViewModel and Repository.
 
 ## Conclusions:
-Using modern tools (i.e. ViewModel and coroutines) is much easier to
+Using modern tools (i.e. ViewModel and coroutines), it is much easier to
 write an app without rxjava than before.
 
 I didn't know about Coroutines Flow before. It is almost like Rx java implemented natively. I will keep my eye on it.
