@@ -67,11 +67,11 @@ to do a bit of juggling with a BaseFragment and a BaseViewModel.
 
 #### Test:
 I usually use Spek for unit tests (https://spekframework.org/). It was
-challenging to use with suspended functions. To save time I decided to
-use simple jUnit testing instead.
+challenging to use it with suspended functions. To save time I decided
+to use simple jUnit testing instead.
 
-I wrote tests for the domain layer. If I would more time I would write
-unit tests to every ViewModel and Repository.
+I wrote tests for the domain layer. If I would have more time I would
+have writen unit tests to every ViewModel and Repository.
 
 ## Conclusions:
 Using modern tools (ie ViewModel and coroutines) it is much easier to

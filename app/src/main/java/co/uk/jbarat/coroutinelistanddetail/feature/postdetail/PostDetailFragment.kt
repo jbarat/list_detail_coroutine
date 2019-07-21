@@ -1,5 +1,6 @@
 package co.uk.jbarat.coroutinelistanddetail.feature.postdetail
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import co.uk.jbarat.coroutinelistanddetail.R
+import co.uk.jbarat.coroutinelistanddetail.common.ext.getDimensionInPixel
 import co.uk.jbarat.coroutinelistanddetail.common.ext.show
 import co.uk.jbarat.coroutinelistanddetail.common.ui.BaseFragment
 import co.uk.jbarat.coroutinelistanddetail.data.network.avatarServiceUrl
@@ -44,9 +46,10 @@ class PostDetailFragment : BaseFragment() {
                 Glide.with(context).load(avatarServiceUrl + post.authorName)
                     .centerCrop()
                     .placeholder(R.drawable.ic_person)
-                    .transform(RoundedCorners(8))
+                    .transform(RoundedCorners(resources.getDimensionInPixel(R.dimen.avatar_corner)))
                     .into(avatar)
             }
         })
     }
 }
+

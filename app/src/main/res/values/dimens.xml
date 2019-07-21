@@ -5,4 +5,6 @@
     <dimen name="avatar_width">120dp</dimen>
     <dimen name="avatar_height">120dp</dimen>
     <dimen name="app_height">200dp</dimen>
+
+    <dimen name="avatar_corner">8dp</dimen>
 </resources>

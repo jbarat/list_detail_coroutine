@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import co.uk.jbarat.coroutinelistanddetail.R
+import co.uk.jbarat.coroutinelistanddetail.common.ext.getDimensionInPixel
 import co.uk.jbarat.coroutinelistanddetail.data.network.avatarServiceUrl
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -55,7 +56,7 @@ class PostListAdapter(
                 Glide.with(context).load(avatarServiceUrl + post.author)
                     .centerCrop()
                     .placeholder(R.drawable.ic_person)
-                    .transform(RoundedCorners(8))
+                    .transform(RoundedCorners(resources.getDimensionInPixel(R.dimen.avatar_corner)))
                     .into(avatar)
             }
         }
