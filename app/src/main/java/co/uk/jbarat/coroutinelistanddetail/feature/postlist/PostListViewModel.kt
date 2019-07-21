@@ -42,7 +42,7 @@ class PostListViewModel(
 
         job = viewModelScope.async {
             _state.postValue(PostListState(loading = true))
-            val result = postListUseCase.invoke(this)
+            val result = postListUseCase.invoke()
             _state.postValue(handleStateUpdate(result))
         }
     }

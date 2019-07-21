@@ -1,4 +1,4 @@
-package co.uk.jbarat.coroutinelistanddetail.common.ui
+package co.uk.jbarat.coroutinelistanddetail.common
 
 import android.app.Application
 import co.uk.jbarat.coroutinelistanddetail.BuildConfig
